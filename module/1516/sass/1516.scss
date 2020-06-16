@@ -1,0 +1,69 @@
+$container: 1300px;
+
+$color: #222;
+
+$bg-icon: #21bda1;
+
+$bd-radius: 2px;
+
+$f-size: 24px;
+
+$line-height: 1.2em;
+
+$webkit-line-clamp: 2;
+
+.type-1516 {
+      @font-face {
+            font-family: Nunito Sans;
+            src: url(../fonts/NunitoSans-Regular.ttf);
+      }
+      
+      @font-face {
+            font-family: Nunito Sans Light;
+            src: url(../fonts/NunitoSans-Light.ttf);
+      }
+
+      background-color: $color + 214; // mã màu #f8f8f8
+      font-family: "Nunito Sans";
+      text-decoration: none;
+     
+      @mixin webkit($webkit-line-clamp) {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            word-break: break-word;
+
+            -webkit-line-clamp: $webkit-line-clamp; // 2 dòng
+      }
+      
+      .p-30 {
+            padding: 30px;
+      }
+
+      .container-custom {
+            max-width: $container;
+            margin: auto;
+      }
+
+      .icon {
+            background-color: $bg-icon; // #21bda1
+            border-radius: $bd-radius; // 2px
+            font-size: $f-size; // 24px
+      }
+      h4 {
+            font-size: $f-size - 2; // 22px
+            color: $color; // #222
+            line-height: $line-height; // 1.22em
+
+            @include webkit(2); // 2 dòng
+
+      }
+      p {
+            font-family: "Nunito Sans Light";
+            color: $color + 68; // mã màu #666
+            font-size: $f-size - 6px; // 18px
+            line-height: $line-height + 0.4em; // 1.6em
+
+            @include webkit(3); // 3 dòng
+      }
+}

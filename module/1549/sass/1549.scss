@@ -1,0 +1,138 @@
+$container: 1300px;
+
+$color-1: #222;
+
+$color-2: #21bda1;
+
+$color-3: rgba(0,0,0,.1);
+
+$font-weight: 400;
+
+$font-size: 18px;
+
+$line-height: 28px;
+
+$-webkit-line-clamp: 2;
+
+.type-1549 {
+      @font-face {
+            font-family: Nunito Sans Light;
+            src: url(../fonts/OpenSans-Light.ttf);
+      }
+
+      font-family: "Nunito Sans Light";
+
+      .p-30 {
+            padding: 30px;
+      }
+
+      @mixin webkit($-webkit-line-clamp) {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            word-break: break-word;
+
+            -webkit-line-clamp: $-webkit-line-clamp; // 2 dòng
+      }
+
+      .container-custom {
+            max-width: $container;
+            margin: auto;
+      }
+
+      .list-comment {
+            border-top: 1px solid $color-3;
+            border-bottom: 1px solid $color-3;
+
+            .item-next {
+                  border-left: 1px solid $color-3;
+            }
+
+            .item-prev,
+            .item-next {
+                  cursor: pointer;
+                  text-decoration: none;
+                  i {
+                        font-size: $font-size + 6px; // 24px
+                        color: rgba(0, 0, 0, 0.15);
+
+                        &:hover {
+                              color: rgba(0, 0, 0, 0.25);
+                        }
+                  }
+                  span {
+                        font-size: $font-size - 2px; // 16px
+                        color: $color-1 + 136; // #aaa
+                        @include webkit(1); // 1 dòng
+                  }
+                  p {
+                        font-size: $font-size - 4px; // 14px
+                        color: $color-1;
+                        font-weight: $font-weight + 200; // 600
+                        line-height: $line-height; // 28px
+
+                        @include webkit(1); // 1 dòng
+
+                        &:hover {
+                              color: $color-2;
+                        }
+                  }
+            }
+      }
+
+      .items {
+            color: $color-1; // #222;
+            font-size: $font-size + 12px; // 30px
+
+            &::before {
+                  border-bottom: 3px solid #21bda1;
+                  width: 43%;
+                  left: calc(100% - 70%);
+                  content: "";
+                  position: absolute;
+                  bottom: -10px;
+            }
+      }
+
+      .comment {
+            background-color: $color-1 + 214; // #f8f8f8
+            .rounded-circle {
+                  width: 60px !important;
+                  height: 60px;
+            }
+            .title {
+                  h4 {
+                        font-size: $font-size; // 18px
+
+                        @include webkit(2); // 2 dòng
+                  }
+                  a {
+                        color: $color-1 + 136; // #aaa
+                        font-size: $font-size - 4; // 14px
+                        text-decoration: none;
+
+                        @include webkit(1); // 1 dòng
+                  }
+            }
+            .content p {
+                  font-size: $font-size - 2; // 16px
+                  line-height: $line-height;
+                  color: $color-1 + 68; // #666
+
+                  @include webkit(10); // 10 dòng
+
+                  @media (max-width: 768px) {
+                        @include webkit(6); // 6 dòng
+                  }
+
+                  @media (max-width: 415px) {
+                        @include webkit(4); // 4 dòng
+                  }
+            }
+            .reply {
+                  color: $color-1; // #222
+                  text-decoration: none;
+                  font-size: $font-size - 4px; // 14px
+            }
+      }
+}

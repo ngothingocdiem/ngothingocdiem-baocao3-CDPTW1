@@ -1,0 +1,38 @@
+.type-1554 {
+  font-family: "Nunito Sans Light"; }
+  @font-face {
+    font-family: Nunito Sans Light;
+    src: url(../fonts/NunitoSans-Light.ttf); }
+  .type-1554 .form-control {
+    border-radius: 0px !important;
+    border-color: rgba(0, 0, 0, 0.15); }
+  .type-1554 .focus, .type-1554 textarea:focus, .type-1554 input:focus {
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.1); }
+  .type-1554 .container-custom {
+    max-width: 1300px;
+    margin: auto; }
+  .type-1554 textarea {
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    padding: 0.375rem 0.75rem;
+    color: #666; }
+  .type-1554 .check {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    -webkit-line-clamp: 2; }
+  .type-1554 .btn-submit {
+    background-color: #21bda1;
+    border-radius: 2px;
+    box-shadow: 0 0 0 0.1rem #21bda1;
+    max-width: 403.33px; }
+    .type-1554 .btn-submit span {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      word-break: break-word;
+      -webkit-line-clamp: 1; }
+    .type-1554 .btn-submit:focus {
+      box-shadow: 0 0 0 0.1rem #666; }

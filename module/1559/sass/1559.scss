@@ -1,0 +1,161 @@
+$container: 1300px;
+
+$color-1: #222;
+
+$color-2: #21bda1;
+
+$font-size: 18px;
+
+$line-hight: 1.2em;
+
+$webkit-line-clamp: 2;
+
+.type-1559 {
+
+      @font-face {
+            font-family: Nunito Sans;
+            src: url(../fonts/NunitoSans-Regular.ttf);
+      }
+      
+      @font-face {
+            font-family: Nunito Sans Light;
+            src: url(../fonts/NunitoSans-Light.ttf);
+      }
+
+      font-family: "Nunito Sans";
+
+      .container-custom {
+            max-width: $container;
+            margin: auto;
+      }
+
+      .p-30 {
+            padding: 30px;
+      }
+      
+      @mixin webkit ($webkit-line-clamp){
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            word-break: break-word;
+
+            -webkit-line-clamp: $webkit-line-clamp; // 2 dòng
+      }
+
+      .list-views{
+            a{
+                  color: $color-1;
+                  text-decoration: none;
+
+                  .active{
+                        border-bottom: 2px solid $color-2; // #21bda1
+                  }
+
+                  &:hover span{
+                        border-bottom: 2px solid $color-2; // #21bda1
+                        transition: opacity 0.35s all ease;
+                  }
+                  @media(max-width: 415px){
+                        line-height: $line-hight + 1em; // 2.2em
+                  }
+            }
+      }
+      
+      .style-hover {
+            text-decoration: none;
+            cursor: pointer;
+            transition: 2s ease-in-out;
+            color: $color-1; // #222;
+      }
+      
+      .img {
+            cursor: pointer;
+            position: relative;
+            .card-img {
+                  border-radius: 0;
+            }
+
+            .card-img-overlay i{
+                  display: none;
+            }
+            
+            &:hover .card-img-overlay{
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  background-color: rgba(0,0,0,.5);
+                  transition: 1s ease-in-out;
+
+                   a {
+                         @extend .style-hover;
+                   }
+                   i {
+                        color: rgba(255,255,255,.5);
+                        font-size: $font-size + 14; // 32px
+                        display: block;
+                        &:hover{
+                              color: rgba(255, 255, 255, 0.75);
+                        }
+                  }
+            }
+      }
+
+      .card-body {
+            background: $color-1 + 214; // mã màu #f8f8f8
+
+            a {
+                  @extend .style-hover;
+
+                  .card-title {
+                        font-size: $font-size + 4; // 22px;
+
+                        @include webkit(2); // 2 dòng
+                        
+                        &:hover {
+                              color: $color-2; // #21bda1
+                        }
+                  }
+            }
+
+            span {
+                  color: $color-2; // #21bda1
+
+                  @include webkit(1); // 1 dòng
+            }
+            .card-text {
+                  font-family: "Nunito Sans Light" !important;
+                  font-size: $font-size; // 18px
+                  line-height: $line-hight + 0.3em; // 1.5em
+                  color: $color-1 + 68; // mã màu #666
+
+                  @include webkit(4); // 4 dòng
+            }
+            .view {
+                  @extend .style-hover;
+                  font-size: $font-size - 4; // 14px
+
+                  transform: translateZ(0);
+                  backface-visibility: hidden;
+                  -moz-osx-font-smoothing: grayscale;
+                  position: relative;
+                  overflow: hidden;
+
+                  &::before {
+                        content: "";
+                        position: absolute;
+                        z-index: -1;
+                        left: 0;
+                        right: 100%;
+                        bottom: 0;
+                        background: #21bda1;
+                        height: 2px;
+                        transition-property: right;
+                        transition-duration: 0.3s;
+                        transition-timing-function: ease-out;
+                  }
+                  &:hover::before {
+                        right: 0;
+                  }
+            }
+      }
+}
